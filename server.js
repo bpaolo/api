@@ -17,7 +17,7 @@ var port = process.env.PORT || 8080;
 var router = express.Router(); //
 
 router.get('/',function(request, response){
-    response.json({ message:'API - bpaolo'});
+    response.json({ message:'API NodeJs - bpaolo'});
 });
 
 //rotas de contatos
