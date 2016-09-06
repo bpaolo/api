@@ -1,0 +1,11 @@
+{
+    "authors": [
+        {
+            "name": "bruno paolo brabo mauro",
+            "email": "bpaolo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.8",
+    }
+}
