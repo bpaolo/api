@@ -2,19 +2,14 @@ var express    = require('express'),
     app        = express(),
     bodyParser = require('body-parser'),
     mongoose   = require('mongoose'),
+    db         = require('./config/db_config'),
     Contato    = require('./models/contatos');
 
-//conexão com o mongoDB
-mongoose.connect('mongodb://localhost/api', function(err){
-    if(err){
-        console.log('Erro ao conectar no mongo db :' + err);
-    }
-});
 
 app.use(bodyParser());
 
 var port = process.env.PORT || 8080;
-var router = express.Router(); 
+var router = express.Router();
 
 // rota principal
 router.get('/',function(request, response){
