@@ -14,14 +14,16 @@ mongoose.connect('mongodb://localhost/api', function(err){
 app.use(bodyParser());
 
 var port = process.env.PORT || 8080;
-var router = express.Router(); //
+var router = express.Router(); 
 
+// rota principal
 router.get('/',function(request, response){
     response.json({ message:'API NodeJs - bpaolo'});
 });
 
 //rotas de contatos
 router.route('/contatos')
+    //endpoint: listar todos os contatos
     .get(function(request , response){
         Contato.find(function(err, rows){
             if(err){
@@ -31,6 +33,7 @@ router.route('/contatos')
         })
     })
 
+    //endpoint: cadastrar contatos
     .post(function(request , response){
         var model = new Contato();
         model.nome = request.body.nome;
@@ -42,7 +45,7 @@ router.route('/contatos')
         })
     })
 
-//registro das rotas
+//registro para as rotas da api
 app.use('/api', router);
 
 // start no servidor
